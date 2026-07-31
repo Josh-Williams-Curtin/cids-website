@@ -7,6 +7,7 @@ interface Props {
 	title?: string;
 }
 
+const base = import.meta.env.BASE_URL;
 const { title = "CIDS" } = Astro.props;
 const pageTitle = title === "CIDS" ? title : `${title} | CIDS`;
 ---
@@ -16,8 +17,8 @@ const pageTitle = title === "CIDS" ? title : `${title} | CIDS`;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+		<link rel="icon" href={`${base}/favicon.ico`} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
