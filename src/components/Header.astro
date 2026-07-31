@@ -3,15 +3,30 @@ const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-	{ href: base, label: 'Home' },
-	{ href: `${base}/about`, label: 'About' },
-	{ href: `${base}/blog`, label: 'Blog' },
-	{ href: `${base}/contact`, label: 'Contact' },
+	{ href: base, label: "Home" },
+	{ href: `${base}/about`, label: "About" },
+	{ href: `${base}/blog`, label: "Blog" },
+	{ href: `${base}/contact`, label: "Contact" },
 ];
 
+function stripTrailingSlash(path: string) {
+	return path !== "/" && path.endsWith("/") ? path.slice(0, -1) : path;
+}
+
+const normalizedCurrent = stripTrailingSlash(currentPath);
+const normalizedBase = stripTrailingSlash(base);
+
 function isActive(href: string) {
-	if (href === base) return currentPath === base;
-	return currentPath === href || currentPath.startsWith(`${href}/`);
+	const normalizedHref = stripTrailingSlash(href);
+	const isHome = normalizedHref === normalizedBase;
+	const isExactMatch = normalizedCurrent === normalizedHref;
+	const isNestedMatch = normalizedCurrent.startsWith(`${normalizedHref}/`);
+
+	if (isHome) {
+		return isExactMatch;
+	} else {
+		return isExactMatch || isNestedMatch;
+	}
 }
 ---
 
@@ -27,12 +42,12 @@ function isActive(href: string) {
 							<li>
 								<a
 									href={item.href}
-									aria-current={active ? 'page' : undefined}
+									aria-current={active ? "page" : undefined}
 									class:list={[
-										'transition-colors',
+										"transition-colors",
 										active
-											? 'text-primary underline underline-offset-4'
-											: 'text-background-content hover:text-primary',
+											? "text-primary underline underline-offset-4"
+											: "text-background-content hover:text-primary",
 									]}
 								>
 									{item.label}

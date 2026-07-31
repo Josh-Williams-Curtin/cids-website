@@ -22,7 +22,9 @@ const pageTitle = title === "CIDS" ? title : `${title} | CIDS`;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class="flex min-h-screen flex-col bg-background text-background-content">
+	<body
+		class="flex min-h-screen flex-col bg-background text-background-content"
+	>
 		<Header />
 		<slot />
 		<Footer />
