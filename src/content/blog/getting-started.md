@@ -3,6 +3,7 @@ title: Getting Started
 description: A quick overview of what CIDS is building.
 pubDate: 2026-07-28
 ---
+Test #2
 
 CIDS is building tools and services to help teams work smarter. This blog will cover product updates, technical deep-dives, and community highlights.
 
@@ -11,3 +12,4 @@ CIDS is building tools and services to help teams work smarter. This blog will c
 - Product announcements
 - Engineering notes
 - Community spotlights
+
