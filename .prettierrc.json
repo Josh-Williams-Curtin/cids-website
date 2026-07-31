@@ -1,5 +1,7 @@
 {
 	"useTabs": true,
+	"tabWidth": 2,
+	"htmlWhitespaceSensitivity": "ignore",
 	"plugins": ["prettier-plugin-astro"],
 	"overrides": [
 		{
