@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL;
+const home = base.endsWith("/") ? base : `${base}/`;
+---
+
+<Layout title="Page not found">
+	<main
+		class="flex flex-1 flex-col items-center justify-center gap-4 text-center"
+	>
+		<h1 class="text-3xl font-bold text-primary">Page not found</h1>
+		<p class="text-background-content">Redirecting you back home&hellip;</p>
+		<a href={home} class="text-primary underline underline-offset-4">
+			Go to home
+		</a>
+	</main>
+</Layout>
+
+<script is:inline define:vars={{ home }}>
+	window.location.replace(home);
+</script>

@@ -24,11 +24,11 @@ content:
 
 actions:
   - name: merge-to-main
-    label: Merge to main & deploy
+    label: Publish changes
     workflow: merge-cms.yml
     ref: main
-    cancelable: false
+    cancelable: true
     confirm:
-      title: Merge to main?
+      title: Publish changes?
       message: This merges the cms branch into main and deploys the site to GitHub Pages.
-      button: Merge & deploy
+      button: Publish
