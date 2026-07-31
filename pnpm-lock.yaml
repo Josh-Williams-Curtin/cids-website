@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@lucide/astro':
+        specifier: ^1.27.0
+        version: 1.27.0(astro@7.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0))
       astro:
         specifier: ^7.1.6
         version: 7.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)
@@ -535,6 +538,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/astro@1.27.0':
+    resolution: {integrity: sha512-+fhvqNEKqKCPb3qPGDd5xZCMN1o0dtYmNB5tIjtal2FvXQ0X+mXG3pZwefbEPVL7pMA3PkiABnDoIZsM5dOW8Q==}
+    peerDependencies:
+      astro: ^4 || ^5 || ^6 || ^7
 
   '@napi-rs/wasm-runtime@1.2.0':
     resolution: {integrity: sha512-kDoONqMa+VnZ4vvvu/ZUurpJ4gkZU57e7g69qpNgWhYcZFPUHZM2CEMKm+cG6ufDVALbjMvfmMjFVqaK7uEMnA==}
@@ -2029,6 +2037,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lucide/astro@1.27.0(astro@7.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0))':
+    dependencies:
+      astro: 7.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)
 
   '@napi-rs/wasm-runtime@1.2.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
     dependencies:
