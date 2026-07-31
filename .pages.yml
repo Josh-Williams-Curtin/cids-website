@@ -1,0 +1,23 @@
+media: public/images
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: "{title}.md"
+    fields:
+      - name: title
+        type: string
+      - name: description
+        type: text
+      - name: pubDate
+        label: Publish Date
+        type: date
+      - name: body
+        label: Content
+        type: rich-text
+    view:
+      primary: title
+      sort: pubDate
+      order: desc
